@@ -49,15 +49,15 @@ int g(int x, int s1, int s2, int p, std::pair<int, int> b, int ms)
 		}
 		else
 		{
+			won = false;
 			for (auto m : moves(s1, s2))
 			{
 				if (g(x + 1, m.first, m.second, p, b, ms) == 1)
 				{
-					won = false;
+					won = true;
 					break;
 				}
 			}
-			won = !won;
 		}
 		return int(won);
 	}
@@ -70,15 +70,15 @@ int game(int s1, int s2, int p, std::pair<int, int> b, int ms)
 	{
 		case 1:
 		{
+			won = false;
 			for (auto m : moves(s1, s2))
 			{
 				if (g(1, m.first, m.second, p, b, ms) == 1)
 				{
-					won = false;
+					won = true;
 					break;
 				}
 			}
-			won = !won;
 			break;
 		}
 		case 2:
