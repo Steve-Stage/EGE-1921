@@ -48,15 +48,15 @@ int g(int x, int s, int p, std::pair<int, int> b, int ms)
 		}
 		else
 		{
+			won = false;
 			for (auto m : moves(s))
 			{
 				if (g(x + 1, m, p, b, ms) == 1)
 				{
-					won = false;
+					won = true;
 					break;
 				}
 			}
-			won = !won;
 		}
 		return int(won);
 	}
